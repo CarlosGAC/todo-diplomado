@@ -73,4 +73,8 @@ class ListsController < ApplicationController
     def list_params
       params.require(:list).permit(:title)
     end
+
+    def set_element
+      @element = Element.find(params[:list_id])
+    end
 end

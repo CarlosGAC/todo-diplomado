@@ -1,10 +1,12 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /elements
   # GET /elements.json
   def index
     @elements = Element.all
+    #@elements = Element.all
   end
 
   # GET /elements/1
