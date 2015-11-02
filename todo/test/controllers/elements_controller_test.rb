@@ -18,7 +18,7 @@ class ElementsControllerTest < ActionController::TestCase
 
   test "should create element" do
     assert_difference('Element.count') do
-      post :create, element: { body: @element.body, list_id: @element.list_id, title: @element.title }
+      post :create, element: { list_id: @element.list_id, text: @element.text }
     end
 
     assert_redirected_to element_path(assigns(:element))
@@ -35,7 +35,7 @@ class ElementsControllerTest < ActionController::TestCase
   end
 
   test "should update element" do
-    patch :update, id: @element, element: { body: @element.body, list_id: @element.list_id, title: @element.title }
+    patch :update, id: @element, element: { list_id: @element.list_id, text: @element.text }
     assert_redirected_to element_path(assigns(:element))
   end
 

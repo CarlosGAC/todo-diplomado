@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @element.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @element.body %>
+  <strong>Text:</strong>
+  <%= @element.text %>
 </p>
 
 <p>
   <strong>List:</strong>
-  <%= @element.list %>
+  <%= @element.list.title %>
 </p>
 
 <%= link_to 'Edit', edit_element_path(@element) %> |
