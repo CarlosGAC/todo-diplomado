@@ -1,0 +1,40 @@
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">To-Do Loco</a>
+      <ul class="right hide-on-med-and-down">
+        <%if user_signed_in? %>
+        <li>
+          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+        </li>
+        <%else%>
+        <li>
+          <%= link_to "Iniciar sesión", new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to "Crear cuenta", new_user_registration_path %>
+        </li>
+        <%end%>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+      <%if user_signed_in? %>
+        <li>
+          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"white" %>
+        </li>
+        <%else%>
+        <li>
+          <%= link_to "Iniciar sesión", new_user_session_path, class:"waves-effect waves-light" %><i class="material-icons left">perm_identity</i>
+        </li>
+        <li>
+          <%= link_to "Crear cuenta", new_user_registration_path %>
+        </li>
+        <%end%>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+    </div>
+</nav>

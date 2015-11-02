@@ -1,28 +1,36 @@
-<h2>Sign up</h2>
+<h3 class="center-align">Registrarse</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row">
+    <div class="input-field col s12">
+    <i class="material-icons prefix">email</i>
+    <%= f.email_field :email, autofocus: true, id:"icon_prefix", class:"validate", autocomplete:"off" %>
+    <label for="icon_prefix" class="active">Correo</label>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="row">
+    <div class="input-field col s12">
+    <i class="material-icons prefix">https</i>
+    <%= f.password_field :password, autocomplete: "off", id:"icon_prefix", minlength:"8" %>
+    <label for="icon_prefix" class="active">Contraseña (8 caracteres mínimo)</label>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">done_all</i>
+      <%= f.password_field :password_confirmation, autocomplete: "off", id:"icon_prefix" %>
+      <label for="icon_prefix" class="active">Confirmar contraseña</label>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="row">
+    <div class="input-field-col-s6 center-align">
+      <%= f.submit "Registrarse", class:"btn center-align" %>
+    </div>
   </div>
 <% end %>
 
