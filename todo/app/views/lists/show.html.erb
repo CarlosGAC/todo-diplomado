@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @list.title %>
-</p>
+<div class="row">
+  <ul class="collection with-header col s2">
+        <li class="collection-header"><h4><%= @list.title %></h4></li>
+        <% @elements.each do |element| %>
+        <li class="collection-item"><%= element.text %></li>
+        <% end %>
+  </ul>
+</div>
 
 
 

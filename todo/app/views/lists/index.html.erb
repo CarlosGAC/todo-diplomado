@@ -2,25 +2,14 @@
 
 <h1>Listing Lists</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <% @lists.each do |list| %>
+  <ul class="collection with-header col s2">
+        <li class="collection-header"><h4><%= link_to list.title, list %></h4></li>
+  </ul>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.title %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

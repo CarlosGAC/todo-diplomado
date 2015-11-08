@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102043229) do
+ActiveRecord::Schema.define(version: 20151108013033) do
 
   create_table "elements", force: :cascade do |t|
     t.string   "text"
     t.integer  "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "elements", ["list_id"], name: "index_elements_on_list_id"
+  add_index "elements", ["user_id"], name: "index_elements_on_user_id"
 
   create_table "lists", force: :cascade do |t|
     t.string   "title"
