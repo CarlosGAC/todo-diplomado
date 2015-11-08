@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
+$(document).on("ajax:success","form#comments-form", function(ev,data){
+	console.log(data);
+});

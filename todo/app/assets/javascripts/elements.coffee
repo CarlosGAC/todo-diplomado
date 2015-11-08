@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on "ajax:success", "form#elements-form",(ev,data)->
+	$("#comments-box").before("<li class='collection-item'>#{data.text}</li>")
+	console.log "<li class='collection-item'>#{data.text}</li>" 
+	console.log ev 
+	console.log data 
+
+$(document).on "ajax:error", "form#elements-form",(ev,data)->
+	console.log data 

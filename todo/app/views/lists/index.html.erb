@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Lists</h1>
+<h1 class="center-align">Listas</h1>
 
-<div class="row">
+<div class="row center-align">
   <% @lists.each do |list| %>
-  <ul class="collection with-header col s2">
+  <ul class="collection with-header col s6">
         <li class="collection-header"><h4><%= link_to list.title, list %></h4></li>
   </ul>
   <% end %>

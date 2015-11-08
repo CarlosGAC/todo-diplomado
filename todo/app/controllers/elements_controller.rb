@@ -32,7 +32,7 @@ class ElementsController < ApplicationController
     respond_to do |format|
       if @element.save
         format.html { redirect_to @element.list, notice: 'Element was successfully created.' }
-        format.json { render :show, status: :created, location: @element }
+        format.json { render :show, status: :created, location: @element.list }
       else
         format.html { render :new }
         format.json { render json: @element.errors, status: :unprocessable_entity }

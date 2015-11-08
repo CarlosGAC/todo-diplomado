@@ -1,4 +1,4 @@
-<%= form_for([@list,@element]) do |f| %>
+<%= form_for([@list,@element], remote: true, html: { id: "elements-form", :"data-type" => "json" }) do |f| %>
   <% if @element.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
@@ -10,13 +10,10 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
-  </div>
   
-  <div class="actions">
-    <%= f.submit %>
+  <div class="input-field">
+    <label class="active">Nueva Tarea</label>
+    <%= f.text_field :text, class:"validate" %>
   </div>
+  <%= f.submit 'Crear', class:"btn secondary-content"  %>
 <% end %>
