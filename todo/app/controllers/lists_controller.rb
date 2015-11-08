@@ -12,7 +12,7 @@ class ListsController < ApplicationController
   # GET /lists/1.json
   def show
     @element  = Element.new
-    @elements = Element.where(list_id: params[:list_id])
+    @elements = Element.where(list_id: params[:id])
   end
 
   # GET /lists/new
