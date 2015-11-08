@@ -59,8 +59,8 @@ class ElementsController < ApplicationController
   def destroy
     @element.destroy
     respond_to do |format|
-      format.html { redirect_to @list, notice: 'Element was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to @element.list}
+      format.json { render :show, status: :destroyed, location: @element }
     end
   end
 

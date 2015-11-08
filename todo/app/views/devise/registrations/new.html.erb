@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="row">
-    <div class="input-field col s12">
+    <div class="input-field col s12 l5 offset-l4">
     <i class="material-icons prefix">email</i>
     <%= f.email_field :email, autofocus: true, id:"icon_prefix", class:"validate", autocomplete:"off" %>
     <label for="icon_prefix" class="active">Correo</label>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
+    <div class="input-field col s12 l5 offset-l4">
     <i class="material-icons prefix">https</i>
     <%= f.password_field :password, autocomplete: "off", id:"icon_prefix", minlength:"8" %>
     <label for="icon_prefix" class="active">Contraseña (8 caracteres mínimo)</label>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="row">
-    <div class="input-field col s12">
+    <div class="input-field col s12 l5 offset-l4">
       <i class="material-icons prefix">done_all</i>
       <%= f.password_field :password_confirmation, autocomplete: "off", id:"icon_prefix" %>
       <label for="icon_prefix" class="active">Confirmar contraseña</label>
@@ -28,7 +28,7 @@
   </div>
 
   <div class="row">
-    <div class="input-field-col-s6 center-align">
+    <div class="col s1 l5 offset-l4">
       <%= f.submit "Registrarse", class:"btn center-align" %>
     </div>
   </div>
