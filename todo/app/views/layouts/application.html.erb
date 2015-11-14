@@ -7,11 +7,13 @@
 	<%= csrf_meta_tags %>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-	<%= render "partials/header"%>
-	<p class="notice center-align"><%= notice %></p>
-	<p class="alert center-align"><%= alert %></p>
-<%= yield %>
-
+<body>		
+	<%= render "partials/header" %>
+	<main>
+		<p class="notice center-align"><%= notice %></p>
+		<p class="alert center-align"><%= alert %></p>
+		<%= yield %>
+	</main>
+<%= render"partials/footer" %>
 </body>
 </html>

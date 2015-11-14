@@ -1,16 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <ul class="collection with-header col s3">
-        <li class="collection-header"><h4><%= @list.title %></h4></li>
+  <ul class="collection with-header col s3 offset-s4">
+        <li class="collection-header"><h4><%= @list.title %></h4>
         <% @elements.each do |element| %>
-        <li class="collection-item"><%= element.text %> <%= link_to 'Eliminar', list_element_path(@list,element), method: :delete,  class:"secondary-content" %></li>
+        <li class="collection-item"><%= element.text %> 
+	        <%= link_to list_element_path(@list,element), method: :delete,  class:"secondary-content delete" do %>
+				<i class="material-icons">delete</i>
+			<% end %>
+		</li>
         <% end %>
         <li class"collection-item"  id="comments-box"><%= render 'elements/form' %></li>
   </ul>
 </div>
 
+<div class="row">
+	<%= link_to 'Atras', lists_path, class:"btn col offset-s4" %>
+</div>
+<div class="row">
+	<%= link_to "Eliminar Lista",list_path(@list), method: :delete,  class:"col offset-s4" %>
+</div>
 
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
